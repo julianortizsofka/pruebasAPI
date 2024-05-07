@@ -40,3 +40,10 @@ La automatización se centra en 4 escenarios
 
 También puede ejecutarse individualmente con cada escenario con el runner correspondiente
 
+
+##  Hallazgos y conclusiones
+
+La API usada no maneja la codificación de status code standard, se puede encontrar que en los casos de Intento de creación de un usuario ya registrado o en el Inicio de sesión con un usuario y contraseña incorrectas, responde con un statuscode 200. Por lo tanto es necesario revisar el Body del Response para verificar el estado de la solicitud lo que implica que es una mala práctica. 
+
+
+Adicionalmente, Karate Framework es una herramienta que permite una rapid implementación, sin embargo, para pruebas más completas es mejor utilizar Serenity BDD para probar el Backend y el Frontend que incluyan pruebas de sistema e integración. Es una herramienta que debe ser usada solo para pruebas de sistema.  
