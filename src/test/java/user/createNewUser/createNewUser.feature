@@ -2,7 +2,7 @@ Feature: signup test on api.demoblaze when create a new user
 
       Scenario: create a new user
 
-        * def randomNomber =
+        * def randomNumber =
          """
   function(max){ return Math.floor(Math.random() * max) + "" }
   """
@@ -11,7 +11,7 @@ Feature: signup test on api.demoblaze when create a new user
         """
             {"username": "Carlos<random>","password": "C<random>"}
         """
-        * replace user.random =  randomNomber(100000)
+        * replace user.random =  randomNumber(100000)
 
         Given url 'https://api.demoblaze.com/signup'
         And request user
